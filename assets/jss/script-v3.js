@@ -10,50 +10,108 @@ var timer;
 var time = 60;
 var timerEl = document.getElementById("time");
 
-//TARGET QUESTIONS ARRAY ** how to link to array?
-var questionsContainer = document.getElementById("questions");
-//var questions = questionsContainer.children;
+//TARGET QUESTIONS DIV 
+var questionsDiv = document.getElementById("questions");
+var questionTitleEl = document.getElementById("question-title");
+var choicesEl = document.getElementById("choices");
+var progress = document.getElementById("progress");
+//CREATE A VARIABLE TO HOLD QUESTION INDEX
+var lastQuestion = quizQuestions.length-1;
 var questionIndex = 0;
+var count = 0;
+var timer;
+var score = 0;
 
-//FUNCTIONS
-//START TIMER
+
+//TARGET CURRENT QUESTION AND ANSWERS OBJECT
+var quizQuestionsObject = quizQuestions[questionIndex];
+
+//TARGET CORRECT ANSWER OF EACH QUESTION
+var correctAnswer = quizQuestions[questionIndex].correctAnswer;
+
+
+//FUNCTIONS////////////////////////////////////////////////
+
+//TIMER
 function countDown(){
     time--;
     timerEl.textContent = time;
 }
+
 //START QUIZ
 function startQuiz() {
-    // start the timer
-    timer = setInterval(countDown, 1000)
-    // Hide the start screen
-    startScreen.classList.add("hide");
-    showCurrentQuestion();
+    timer = setInterval(countDown, 1000); // start the timer
+    startScreen.classList.add("hide"); // Hide the start screen
+    showCurrentQuestion(); //Call first question
 }
 
-//FUNCTION TO HIDE PREVIOUS QUESTION AND SHOW CURRENT ONE
+    
+}
+
+//HIDE PREVIOUS QUESTION AND SHOW CURRENT ONE
 function showCurrentQuestion(){
-    var currentQuestion = quizQuestions[questionIndex];
-    var questionTitleEl = document.getElementById("question-title");
-    var choicesEl = document.getElementById("choices");
-    questionsContainer.classList.remove("hide");
-    questionTitleEl.textContent = currentQuestion.question;
-    currentQuestion.answers.forEach( function (choice, i) {
-        console.log(choice);
-        console.log(i);
-        //to create buttons
+    //DISPLAY QUESTION
+    questionsDiv.classList.remove("hide");
+    questionTitleEl.textContent =  quizQuestionsObject.question;
+    
+    //RENDER ANSWERS INSIDE BUTTONS
+    quizQuestionsObject.answers.forEach( function (choice) {
+        console.log(choice)
+        var btn = document.createElement("button");
+        btn.innerHTML = "choices"
+        choicesEl.innerHTML += "<button id='choices'>" + choice + "</button>";
+    } )  
+}
 
-        //target the elemnt where you want your buttons to appear
+// render progress
+function renderProgress(){
+    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    }
+}
 
-        //append thos buttons to that element
+//COMPARE USER SELECTION AND CORRECT ANSWER
+function compare(target){
+    //CHECK USER ANSWER
+    if (target.textContent == correctAnswer){
+        //answer is correct
+        score++;
+        alert("You're right! NEW SCORE: " + score);
+    }
+    else{
+        //answer is wrong
+        alert("You're wrong!");
+    }
+    /*count=0;
+    if(runningQuestion< lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        //end the quiz and show the score
+        clearInterval(TIMER);
+        scoreRender();
+    }*/
+    
+    //Need to check if there are more questions or more time
+    //If yes, show next question
+    //If no, end game & show results
+}
 
+//FUNCTION TO SHOW RESULTS
 
-        //an onclick event that launches another function that  is going ot see if the answer is correct?
-        
-    } )
+//EVENT LISTENERS//////////////////////////////////////
 
+//ON CLICK EVENT TO START QUIZ
+startButton.addEventListener("click", startQuiz);
+
+//ON CLICK EVENT TO LAUNCH COMPARE ANSWERS FUNCTION
+choicesEl.onclick = function(event){
+    //Target event
+    var target = event.target;
+    //CALL COMPARE ANSWERS FUNCTION
+    compare(target);
 }
 
 
-//EVENT LISTENERS
-//startButton.onclick = startQuiz
-startButton.addEventListener("click", startQuiz);
+
+
