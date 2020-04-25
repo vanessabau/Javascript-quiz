@@ -15,6 +15,8 @@ body{
     width: 500px;
     border: 5px black solid;
     padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #questions{
@@ -24,6 +26,8 @@ body{
     background-color: floralwhite;
     border: 5px orange solid;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #game-over{
@@ -34,15 +38,19 @@ body{
     background-color: firebrick;
     border: 5px black solid;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #top-scores{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     width: 500px;
-    background-color: honeydew;
-    border: 5px green solid;
+    background-color: lightyellow;
+    border: 5px gold solid;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #h2score{

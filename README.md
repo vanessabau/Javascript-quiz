@@ -32,6 +32,7 @@ I have not yet been successful in figuring out how to do the following list of i
     
 
 RESOURCES:
+* questions and answers for game: https://jaxenter.com/know-your-javascript-trivia-134924.html
 * creating buttons for each question https://stackoverflow.com/questions/48977848/how-do-i-create-different-button-for-each-item-in-an-array-javascript
 
 * Stop countdown https://www.dreamincode.net/forums/topic/235222-how-to-stop-that-countdown/
