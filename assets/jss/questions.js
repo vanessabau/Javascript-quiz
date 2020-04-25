@@ -1,4 +1,4 @@
-//ARRAY TO HOLD QUESTIONS
+//ARRAY TO HOLD QUESTIONS AND ANSWERS
 var quizQuestions = [ 
     {
         question: "1. Who created JavaScript?",

@@ -1,3 +1,51 @@
+/*CSS STYLE SHEET FOR QUIZ GAME*/
+
 .hide{
     display: none;
+}
+
+body{
+    background-color: azure;
+    margin: 50px;
+}
+
+#start-screen{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 500px;
+    border: 5px black solid;
+    padding-bottom: 15px;
+}
+
+#questions{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    width: 500px;
+    background-color: floralwhite;
+    border: 5px orange solid;
+    padding: 15px;
+}
+
+#game-over{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    line-height: 36px;
+    width: 500px;
+    background-color: firebrick;
+    border: 5px black solid;
+    padding: 15px;
+}
+
+#top-scores{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    width: 500px;
+    background-color: honeydew;
+    border: 5px green solid;
+    padding: 15px;
+}
+
+#h2score{
+    font-size: 36px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

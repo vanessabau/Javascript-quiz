@@ -17,28 +17,31 @@
         <button id="start-button">Start Quiz</button>
     </div>
 
-    <!--TIMER-->
-    <div id="timer-div" class="timer">TIME: <span id="time">0</span></div>
-
     <!--DIV TO DISPLAY QUESTIONS-->
     <div id="questions" class="hide">
+        <!--TIMER-->
+        <div id="timer-div" class="timer">TIME: <span id="time"></span></div>
+        <!--QUESTIONS DISPLAY-->
         <h2 id="question-title">Title test</h2>
+        <!--ANSWER CHOICES DISPLAY-->
         <div id="choices"></div>
     </div>
 
     <!--DIV TO DISPLAY GAME OVER SCREEN-->
     <div id="game-over" class="hide">
+        <!--FORM HERE-->
         <h2 id="form">Form here</h2>
+        <!--FORM SUBMIT BUTTON-->
         <button id="submit-button">Submit</button>
     </div>
 
     <!--DIV TO DISPLAY SCORE RANKING-->
     <div id="top-scores" class="hide">
-        <h2>TOP SCORES</h2>
+        <h2 id="h2score">TOP SCORES</h2>
         <p id="score-rank"></p>
     </div>
 
-    <!--LINK TO JAVASCRIPT-->
+    <!--LINK TO JAVASCRIPT: QUESTIONS IN SEPARATE JS-->
     <script src="./assets/jss/questions.js"></script>
     <script src="./assets/jss/script-v3.js">
     </script>

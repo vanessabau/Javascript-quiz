@@ -16,11 +16,11 @@ var topScores = document.getElementById("top-scores");
 var scoreRank = document.getElementById("score-rank");
 
 var timer;
-var time = 60;
+var time = 30;
 var questionIndex = 0;
 var count = 0;
-var timer;
 var score = 0;
+var timer;
 
 //FUNCTIONS////////////////////////////////////////////////
 
@@ -28,42 +28,50 @@ var score = 0;
 function countDown() {
     time--;
     timerEl.textContent = time;
+    //If timer reaches 0 run gameOver functino
+    if(time==0){
+       gameOver();
+    }
 }
 
 //START QUIZ
 function startQuiz() {
-    startScreen.classList.add("hide"); // Hide the start screen
-    renderQuestion(); //Call first question
-    timer = setInterval(countDown, 1000); // start the timer
+    //Hide start screen, call first question, start timer
+    startScreen.classList.add("hide"); 
+    renderQuestion(); 
+    timer = setInterval(countDown, 1000); 
 }
 
 //GAME OVER DISPLAY
 function gameOver() {
-    //HIDE QUESTIONS AND TIMER
+    //Hide questions and timer
     timerDiv.classList.add("hide");
     questionTitleEl.classList.add("hide");
     timerEl.classList.add("hide");
+    questionsDiv.classList.add("hide");
 
-    //DISPLAY FORM
+    //Display form
     gameOverEl.classList.remove("hide");
     form.innerHTML = "<h2>GAME OVER</h2><br>" +
         "<form 'action=/action_page.php'>" +
-        "<label for='initials'>Your Initials</label><br>" +
+        "<label for='initials'>YOUR INITIALS</label><br>" +
         "<input type='text' id='finitials' name='Initials' value='ENTER INITIALS'><br>" +
-
-        "<label for='Score'>Your Score: " + score + "</label><br>" +
+        "<label for='Score'>YOUR SCORE: " + score + "</label><br>" +
         "<input type='text' id='fscore' name='Score' value='ENTER SCORE'><br>" +
         "</form>";
+    
+    //Stop timer
+    clearInterval(timer);
 }
 
-//RENDER QUESTION
+//RENDER QUESTIONS
 function renderQuestion() {
 
-    //DISPLAY QUESTION
+    //Display next question
     questionsDiv.classList.remove("hide");
     questionTitleEl.textContent = quizQuestions[questionIndex].question;
 
-    //RENDER ANSWERS INSIDE BUTTONS
+    //Render answers inside buttons
     quizQuestions[questionIndex].answers.forEach(function (choice) {
         console.log(choice)
         choicesEl.innerHTML += "<button id='choices'>" + choice + "</button>";
@@ -73,9 +81,9 @@ function renderQuestion() {
 //COMPARE USER SELECTION AND CORRECT ANSWER
 function checkAnswer(target) {
 
-    //CHECK USER ANSWER
+    //Check user answer
     if (target.textContent == quizQuestions[questionIndex].correctAnswer) {
-        //answer is correct
+        //answer is correct, increment score
         score++;
         alert("You're right! NEW SCORE: " + score);
     }
@@ -83,11 +91,12 @@ function checkAnswer(target) {
         //answer is wrong
         alert("You're wrong!");
     }
+    //Increase question index to target next question
     choicesEl.innerHTML = "";
     questionIndex++;
 
     //if else logic to end game or ask next question
-    if ((timer <= 0) || (questionIndex >= quizQuestions.length)) {
+    if (questionIndex >= quizQuestions.length) {
         gameOver();
     }
     else {
@@ -95,20 +104,24 @@ function checkAnswer(target) {
     }
 }
 
+//DISPLAY SCORE SCREEN
 function displayScore() {
     event.preventDefault();
-    //HIDE PREVIOUS SCREEN, SHOW SCORE RANKING
+    //Hide previous screen, display current one
     gameOverEl.classList.add("hide");
     topScores.classList.remove("hide");
 
-    //STORE FORM IN LOCAL STORAGE
+    //Store form submission in local storage
     var finitials = document.getElementById("finitials");
     var fscore = document.getElementById("fscore");
     localStorage.setItem("initials", finitials.value);
     localStorage.setItem("score", fscore.value);
 
-    //DISPLAY RANKED SCORES
-    scoreRank.innerHTML = "<p>INITALS & SCORE RANKINGS HERE</p>";
+    //Display ranked scores (not done yet)
+    scoreRank.innerHTML = "<p>YOUR INITALS AND SCORE: " + score + "</p>";
+    
+    //Stop timer
+    //clearInterval(timer);
 }
 
 //EVENT LISTENERS/////////////////////////////////////
@@ -120,7 +133,7 @@ startButton.addEventListener("click", startQuiz);
 choicesEl.onclick = function (event) {
     //Target event
     var target = event.target;
-    //CALL COMPARE ANSWERS FUNCTION
+    //Call checkAnswers function
     checkAnswer(target);
 }
 
@@ -137,33 +150,5 @@ submitBtn.addEventListener("click", displayScore);
     //Display top 10 value pairs
 
 
-//ATTEMPT TO STORE SCORES IN AN OBJECT AND STORE OBJECT TO LOCAL STORAGE
-
-    //var scores = [];
-    //localStorage.setItem('initials', JSON.stringify(scores))
-    //var data = JSON.parse(localStorage.getItem('items'));
-
-    //function storeInitials() {
-    // Stringify and set "initials" key in localStorage to todos array
-    //localStorage.setItem("initials", JSON.stringify(scores));
-    //}
-    
-    //Attempt to store form responses in array
-    //var initialsText = initials.value.trim();
-    
-    //return form early if submitted test is blank
-    //if(initialsText === ""){
-        //return;
-    //}
-
-    //Add new initials to scores array
-    //scores.push(initialsText);
-    
-    //Store updated initials in localStorage, re-render the list
-    //storeinitials();
-
-    //Attempt to retrieve stored items
-    //document.getElementById("score-rank").innerHTML = localStorage.getItem("initals");
-    //document.getElementById("score-rank").innerHTML = localStorage.getItem("score");
 
 
