@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!--LINK TO CSS-->
     <link rel="stylesheet" href="./assets/css/style-v3.css" />
 </head>
+
 <body>
 
     <!--1. DIV TO HOLD START SCREEN: has header and start button-->
@@ -16,19 +18,30 @@
     </div>
 
     <!--TIMER-->
-    <div class="timer">TIME: <span id="time">0</span></div>
+    <div id="timer-div" class="timer">TIME: <span id="time">0</span></div>
 
-     <!--DIV TO DISPLAY QUESTIONS-->
-     <div id="questions" class = "hide">
-         <h2 id="question-title">Title test</h2>
-         <div id="choices">Choice test</div>
-     </div>
+    <!--DIV TO DISPLAY QUESTIONS-->
+    <div id="questions" class="hide">
+        <h2 id="question-title">Title test</h2>
+        <div id="choices"></div>
+    </div>
 
-     <div id="progress"></div>
+    <!--DIV TO DISPLAY GAME OVER SCREEN-->
+    <div id="game-over" class="hide">
+        <h2 id="form">Form here</h2>
+        <button id="submit-button">Submit</button>
+    </div>
 
-     <!--LINK TO JAVASCRIPT-->
-     <script src =  "./assets/jss/questions.js"></script>
-     <script src="./assets/jss/script-v3.js">
-     </script>
- </body>
- </html>
+    <!--DIV TO DISPLAY SCORE RANKING-->
+    <div id="top-scores" class="hide">
+        <h2>TOP SCORES</h2>
+        <p id="score-rank"></p>
+    </div>
+
+    <!--LINK TO JAVASCRIPT-->
+    <script src="./assets/jss/questions.js"></script>
+    <script src="./assets/jss/script-v3.js">
+    </script>
+</body>
+
+</html>

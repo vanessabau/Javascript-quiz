@@ -22,55 +22,55 @@ var quizQuestions = [
     },
     {
         question: "3. What other name was used for JavaScript?",
-        answers: {
-            a: "Latte",
-            b: "Mocha",
-            c: "B Script",
-            d: "Spidermonkey"
-        },
-        correctAnswer: "b"
+        answers: [
+            "Latte",
+            "Mocha",
+            "B Script",
+            "Spidermonkey"
+        ],
+        correctAnswer: "Mocha"
     },
     {
         question: "4. JavaScript and Java are the same.",
-        answers: {
-            a: "True",
-            b: "False",
-        },
-        correctAnswer: "b"
+        answers: [
+            "True",
+             "False",
+    ],
+        correctAnswer: "False"
     },
     {
         question: "5. Is JavaScript front-end, back-end, or full-stack?",
-        answers: {
-            a: "Front-end",
-            b: "Back-end",
-            c: "Full-stack",
-        },
-        correctAnswer: "c"
+        answers: [
+            "Front-end",
+            "Back-end",
+            "Full-stack",
+        ],
+        correctAnswer: "Full-stack"
     },
     {
         question: "6. Is JavaScript dynamically typed or statically typed?",
-        answers: {
-            a: "Dynamic",
-            b: "Static",
-        },
-        correctAnswer: "a"
+        answers: [
+            "Dynamic",
+            "Static",
+        ],
+        correctAnswer: "Dynamic"
     },
     {
         question: "7. Null is an object",
-        answers: {
-            a: "True",
-            b: "False",
-        },
-        correctAnswer: "a"
+        answers: [
+            "True",
+            "False",
+        ],
+        correctAnswer: "True"
     },
     {
         question: "8. Which is not a reserved word in JavaScript?",
-        answers: {
-            a: "Default",
-            b: "Throw",
-            c: "Undefined",
-        },
-        correctAnswer: "c"
+        answers: [
+            "Default",
+            "Throw",
+            "Undefined",
+        ],
+        correctAnswer: "Undefined"
     },
 
 ]
