@@ -22,6 +22,11 @@ var count = 0;
 var score = 0;
 var timer;
 
+var allScores = {
+    ab: 2,
+    bc: 3,
+}
+
 //FUNCTIONS////////////////////////////////////////////////
 
 //TIMER
@@ -114,8 +119,13 @@ function displayScore() {
     //Store form submission in local storage
     var finitials = document.getElementById("finitials");
     var fscore = document.getElementById("fscore");
-    localStorage.setItem("initials", finitials.value);
-    localStorage.setItem("score", fscore.value);
+    console.log(finitials.value);
+    console.log(fscore.value);
+    allScores[finitials.value] = fscore.value;
+    console.log(allScores);
+    localStorage.setItem(finitials.value, fscore.value);
+    //localStorage.setItem("initials", finitials.value);
+    //localStorage.setItem("score", fscore.value);
 
     //Display ranked scores (not done yet)
     scoreRank.innerHTML = "<p>YOUR INITALS AND SCORE: " + score + "</p>";

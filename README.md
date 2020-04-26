@@ -15,20 +15,16 @@ Current elements to note:
 - I made use of a class "hide" to target <divs> to hide and display them by adding and removing the "hide" class, and giving the "hide" class a property of 'display: none' in the css.
 
 Largest Challenges:
-- Looping through the questions array was the first large challenge. I tried many iterations and it took a few days to settle on the version used. I had different input from the TA's, Instructor, and tutor and worked with the different suggestions to find one that seemed clear and worked.  
+- Looping through the questions to display a current question was the first large challenge. I tried many iterations and it took a few days to settle on the version used. I had different input from the TA's, Instructor, and tutor and worked with the different suggestions to find one that seemed clear and worked.  
 - Stoping the timer(!) - figuring out how to stop the timer had many variations before reaching success. I finally found the clearInterval() method and placed it in the gameOver function. 
+- Storing the scores in local storage. First each new score over-wrote the last score stored; next I tried storeing scores in an object, and storing the object locally, but then I was missing a key for my object value; I also had one attempt where I had two objects stored. Finally I was able to extract the value of the form imputs to store in pairs and this worked without over-writing previous entries. 
 
 Challenges to Still Overcome:
-I have not yet been successful in figuring out how to do the following list of items. I have received suggestions, but so far they have not panned out successfully. 
+I have not yet been successful in figuring out how to do the following three items. I have received suggestions, but so far they have not panned out successfully. 
 
-1. Store scores to local storage    
-    * Store pairs of initials and scores to an object
-    * Store the object in local storage
-    * Update the object with more scores as more people take the quiz
-    * Update the object in local storage
+1. Retrieve the stored value pairs as an object
 2. Sort the value pairs by highest score
-3. Retrieve the top 10 scores from local storage
-4. Display the top 10 scores on my TOP SCORES (final) page
+3. Display the top 10 scores on my TOP SCORES (final) page
     
 
 RESOURCES:
