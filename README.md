@@ -68,6 +68,9 @@ VERSIONS OF CODE THAT I AM WORKING WITH IN ATTEMPTING TO STORE AND RETRIEVE SCOR
     Store updated initials in localStorage, re-render the list
     storeinitials();
 
-    Attempt to retrieve stored items
+    Attempts to retrieve stored items
     document.getElementById("score-rank").innerHTML = localStorage.getItem("initals");
     document.getElementById("score-rank").innerHTML = localStorage.getItem("score");#
+
+    localStorage.setItem("initials", finitials.value);
+    localStorage.setItem("score", fscore.value);

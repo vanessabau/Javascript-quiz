@@ -124,10 +124,14 @@ function displayScore() {
     allScores[finitials.value] = fscore.value;
     console.log(allScores);
     localStorage.setItem(finitials.value, fscore.value);
-    //localStorage.setItem("initials", finitials.value);
-    //localStorage.setItem("score", fscore.value);
+    
+    //Test/debugging
+    console.log(localStorage.length);
+    
+    //Retrieve key/value pairs and rank them
+    //(not done yet)
 
-    //Display ranked scores (not done yet)
+    //Display ranked scores placeholder (not done yet)
     scoreRank.innerHTML = "<p>YOUR INITALS AND SCORE: " + score + "</p>";
 }
 
