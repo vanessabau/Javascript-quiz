@@ -37,6 +37,8 @@ RESOURCES:
 
 * Storing to local storage https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 
+* Retrieving from local storage https://stackoverflow.com/questions/8419354/get-html5-localstorage-keys
+
 * * * * * * * *
   SKETCHBOOK:
 * * * * * * * *

@@ -127,8 +127,15 @@ function displayScore() {
     
     //Test/debugging
     console.log(localStorage.length);
+    //Attempting to retrieve key/value pairs (not working yet)
+    for (var key in localStorage){
+        console.log(key)
+     }
+     for (var value in localStorage){
+        console.log(value)
+     }
     
-    //Retrieve key/value pairs and rank them
+    //Rank key/value pairs
     //(not done yet)
 
     //Display ranked scores placeholder (not done yet)
