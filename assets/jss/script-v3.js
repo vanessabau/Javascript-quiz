@@ -119,9 +119,6 @@ function displayScore() {
 
     //Display ranked scores (not done yet)
     scoreRank.innerHTML = "<p>YOUR INITALS AND SCORE: " + score + "</p>";
-    
-    //Stop timer
-    //clearInterval(timer);
 }
 
 //EVENT LISTENERS/////////////////////////////////////
@@ -140,14 +137,6 @@ choicesEl.onclick = function (event) {
 //SUBMIT FORM
 submitBtn.addEventListener("click", displayScore);
 
-//ELEMENTS TO COMPLETE ///////////////////////////////
-
-    //Create object to store form submissions
-    //submit form to object
-    //store object in local storage
-    //Rank score/initial value pairs
-    //retrieve top 10 value pairs
-    //Display top 10 value pairs
 
 
 
