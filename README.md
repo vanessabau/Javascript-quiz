@@ -19,12 +19,9 @@ Largest Challenges:
 - Stoping the timer(!) - figuring out how to stop the timer had many variations before reaching success. I finally found the clearInterval() method and placed it in the gameOver function. 
 - Storing the scores in local storage. First each new score over-wrote the last score stored; next I tried storeing scores in an object, and storing the object locally, but then I was missing a key for my object value; I also had one attempt where I had two objects stored. Finally I was able to extract the value of the form imputs to store in pairs and this worked without over-writing previous entries. 
 
-Challenges to Still Overcome:
-I have not yet been successful in figuring out how to do the following three items. I have received suggestions, but so far they have not panned out successfully. 
+- Retrieving the stored value pairs as an object that can be sorted was a huge challenge. There are lots of resources for retrieving keys, but not value pairs. My tutor helped me with this and we found some documentation on stack over flow that helped
 
-1. Retrieve the stored value pairs as an object
-2. Sort the value pairs by highest score
-3. Display the top 10 scores on my TOP SCORES (final) page
+-  Sort the value pairs by highest score was another brain teaser that with the help of my tutor and stack overflow I was able to accomplish
     
 
 RESOURCES:
@@ -38,6 +35,10 @@ RESOURCES:
 * Storing to local storage https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 
 * Retrieving from local storage https://stackoverflow.com/questions/8419354/get-html5-localstorage-keys
+
+* Retrieving key value pairs from local storage https://stackoverflow.com/questions/17745292/how-to-retrieve-all-localstorage-items-without-knowing-the-keys-in-advance/51647623
+
+* Sorting value pairs in objects https://stackoverflow.com/questions/1069666/sorting-object-property-by-values
 
 * * * * * * * *
   SKETCHBOOK:

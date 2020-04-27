@@ -109,6 +109,19 @@ function checkAnswer(target) {
     }
 }
 
+function allStorage() {
+    //Pulls key/value pairs from local storage and saves them to an object
+    var archive = {}, // Notice change here
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        archive[ keys[i] ] = localStorage.getItem( keys[i] );
+    }
+
+    return archive;
+}
+
 //DISPLAY SCORE SCREEN
 function displayScore() {
     event.preventDefault();
@@ -125,21 +138,27 @@ function displayScore() {
     console.log(allScores);
     localStorage.setItem(finitials.value, fscore.value);
     
-    //Test/debugging
-    console.log(localStorage.length);
-    //Attempting to retrieve key/value pairs (not working yet)
-    for (var key in localStorage){
-        console.log(key)
-     }
-     for (var value in localStorage){
-        console.log(value)
-     }
-    
-    //Rank key/value pairs
-    //(not done yet)
 
-    //Display ranked scores placeholder (not done yet)
-    scoreRank.innerHTML = "<p>YOUR INITALS AND SCORE: " + score + "</p>";
+    //Attempting to retrieve key/value pairs (not working yet)
+    var localStorageContent = allStorage();
+    console.log(localStorageContent);
+
+    var keyValuePairs = [];
+    for (var record in localStorageContent){
+        keyValuePairs.push([record, localStorageContent[record]]);
+    }
+
+    keyValuePairs.sort(function(a, b){
+        return b[1]- a[1];
+    });
+    console.log(keyValuePairs);
+
+    for(i=0; i<10; i++){
+        var newElement = document.createElement("p");
+        newElement.innerHTML = keyValuePairs[i];
+        document.getElementById("score-rank").append(newElement);
+    }
+    
 }
 
 //EVENT LISTENERS/////////////////////////////////////
